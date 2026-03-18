@@ -6,7 +6,7 @@ st.set_page_config(page_title="FAUSTIN CHIBINDA SAGE Recherche", page_icon="🔬
 
 # Ta clé API
 genai.configure(api_key="AIzaSyCQwvTsRWzj9BP5IcKCqibs5PTK2rWK-uQ")
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel('gemini-1.5-flash-latest')
 st.title("🔬 FAUSTIN CHIBINDA SAGE Recherche")
 st.write("Bienvenue sur mon application de recherche IA.")
 
