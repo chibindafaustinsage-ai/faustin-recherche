@@ -20,7 +20,7 @@ if st.button("Lancer la recherche 🚀"):
     if prompt:
         try:
             # LE MODÈLE CORRECT EST ICI
-            model = genai.GenerativeModel('gemini-1.5-flash')
+            model = genai.GenerativeModel('gemini-pro')
             
             with st.spinner("Recherche en cours..."):
                 response = model.generate_content(prompt)
