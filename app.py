@@ -2,9 +2,9 @@ import streamlit as st
 from google import genai
 
 # Configuration de la page
-st.set_page_config(page_title="Chibinda Sage Recherche")
+st.set_page_config(page_title="Chibinda Sage Recherche", page_icon="🚀")
 
-# Connexion au nouveau client Google GenAI
+# Connexion au client Google GenAI
 try:
     client = genai.Client(api_key=st.secrets["GOOGLE_API_KEY"])
 except Exception as e:
@@ -20,7 +20,6 @@ if st.button("Lancer la recherche 🚀"):
     if prompt:
         try:
             with st.spinner("L'IA réfléchit..."):
-                # Utilisation du modèle 2.0 Flash (le plus rapide au monde)
                 response = client.models.generate_content(
                     model="gemini-2.0-flash", 
                     contents=prompt
@@ -28,6 +27,16 @@ if st.button("Lancer la recherche 🚀"):
                 st.markdown("### Résultat :")
                 st.write(response.text)
         except Exception as e:
-            st.error(f"Erreur lors de la génération : {e}")
+            st.error(f"Erreur : {e}")
     else:
-        st.warning("Veuillez écrire quelque chose.")
+        st.warning("bonjour mon ami (e) .")
+
+# --- SECTION SOUTIEN ET REMERCIEMENTS ---
+st.markdown("---") # Une ligne de séparation
+st.subheader("🙏 Remerciements & Soutien")
+st.write("Merci d'utiliser mon application de recherche ! Si ce service vous est utile et que vous souhaitez m'encourager à l'améliorer, vous pouvez me soutenir.")
+
+# Encadré pour le numéro de téléphone
+st.info("💎 **Pour me soutenir (Airtime / M-Pesa / Airtel Money) :** \n\n **+243 [813397457, 986265221]**")
+
+st.caption("© 2026 - Créé par Chibinda Faustin Sage")
